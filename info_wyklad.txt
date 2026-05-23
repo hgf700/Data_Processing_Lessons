@@ -1,0 +1,67 @@
+wyklad 1
+#   Monotoniczna zaleznosc
+df[’Wiek’].corr(df[’Dochod’], method = ’spearman’)
+# Monotoniczna = gdy jedna zmienna: rośnie → druga też generalnie rośnie
+# lub rośnie → druga generalnie maleje.
+# nie zaklada liniowej zaleznosci
+# zależności między dwiema zmiennymi na podstawie ich rang
+
+wyklad 2
+#   korelacji Pearsona
+df[’Wiek’].corr(df[’Dochod’])
+# liniowa mierzy liniową zaleznosc miedzy dwiema zmiennymi.
+
+#   macierz korelacji
+df.corr()
+
+wyklad 3
+#   regresja
+# metoda modelowania relacji miedzy zmiennymi  wartosci, ktore chcemy przewidziec.
+#  wartosci, na podstawie ktorych dokonujemy przewidywan. 
+
+#   unsupervised clustering algorithms jak wybrac odpowiednia liczbe skupien (k)
+#Metoda lokcia (Elbow Method),  Silhouette Score
+
+wyklad 4        pca, nlp, ml
+#   pca
+#metody redukcji wymiarów danych i metody
+#To informacja, ile „różnorodności” danych (wariancji) tłumaczy każda składowa główna.
+explained_variance_
+#proporcja: wartość własną danej składowej, dzielisz przez sumę wszystkich wartości własnych.
+explained_variance_ratio_
+
+#   zastosowanie pca
+#Kompresja danych: Zmniejszenie rozmiaru danych przy zachowaniu większości wariancji.
+#Usuwanie szumów: usuwa w dużej mierze szum o małej wariancji.
+#Przyspieszenie uczenia
+
+#   przetwarzanie danych dla nlp 
+#stop words słowa często występujące (np. ”the”, ”and”, ”is”), które nie wnoszą istotnej informacji.
+#Stemming – redukuje słowa do tzw. rdzenia (np. ”running” − >”run”).
+#Lematyzacja – używa słownika i analizuje kontekst (np. ”am”, ”are”,”is” − > ”be”).
+
+#   bigramy
+#pary dwóch kolejnych słów, np. „bardzo dobry”, „machine learning”, „nie wiem”
+#są używane po to, żeby uchwycić kontekst zamiast interpretowac jako pojedyncze
+
+#   pipeline
+#Zbieranie i wczytywanie danych tekstowych
+#Czyszczenie i normalizacja
+#Tokenizacja, usuwanie stop words, stemming/lematyzacja.
+#Eksploracja danych (frequency distribution, word cloud).
+#Konwersja tekstu do reprezentacji numerycznej (BoW, TF-IDF,embeddings).
+#Trenowanie modelu i ocena jakości modelu
+
+#   wyklad 5        Analiza czasowych szeregów danych
+
+#   wyklad 6 
+
+#   wyklad 7 
+
+#   wyklad 8 
+
+#   wyklad 9 
+
+#   wyklad 10 
+
+#   wyklad 11
