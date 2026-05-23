@@ -36,4 +36,10 @@ The goal of these lessons is to introduce fundamental concepts and practical ski
 - Pattern discovery in datasets
 - Comparing supervised and unsupervised approaches
 
-## Lab 7
+## Lab 7 — Time series data analysis
+- Moving averages (7-day and 30-day windows)
+- Analysis of ACF and PACF (Autocorrelation and Partial Autocorrelation functions)
+- Decomposition of time series into:
+  - Trend
+  - Seasonality
+  - Residual components
