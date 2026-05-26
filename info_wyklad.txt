@@ -1,4 +1,5 @@
-wyklad 1
+        wyklad 1        Wprowadzenie do analizy danych. Podstawy statystyki dla analizy danych
+
 #   Monotoniczna zaleznosc
 df[’Wiek’].corr(df[’Dochod’], method = ’spearman’)
 # Monotoniczna = gdy jedna zmienna: rośnie → druga też generalnie rośnie
@@ -6,7 +7,9 @@ df[’Wiek’].corr(df[’Dochod’], method = ’spearman’)
 # nie zaklada liniowej zaleznosci
 # zależności między dwiema zmiennymi na podstawie ich rang
 
-wyklad 2
+        wyklad 2        Przetwarzanie danych: czyszczenie i normalizacja  Metody wizualizacji danych  Podstawy
+                        eksploracyjnej analizy danych (EDA) Analiza korelacji i zaleznosci w danych
+
 #   korelacji Pearsona
 df[’Wiek’].corr(df[’Dochod’])
 # liniowa mierzy liniową zaleznosc miedzy dwiema zmiennymi.
@@ -14,7 +17,9 @@ df[’Wiek’].corr(df[’Dochod’])
 #   macierz korelacji
 df.corr()
 
-wyklad 3
+        wyklad 3        Wstep do analizy regresji  Modele klasyfikacji danych  Klasyfikacja drzew decyzyjnych 
+                        Analiza skupien (clustering) 
+
 #   regresja
 # metoda modelowania relacji miedzy zmiennymi  wartosci, ktore chcemy przewidziec.
 #  wartosci, na podstawie ktorych dokonujemy przewidywan. 
@@ -22,7 +27,9 @@ wyklad 3
 #   unsupervised clustering algorithms jak wybrac odpowiednia liczbe skupien (k)
 #Metoda lokcia (Elbow Method),  Silhouette Score
 
-wyklad 4        pca, nlp, ml
+        wyklad 4        Analiza Głównych Składowych (PCA): Podstawy teoretyczne, implementacja i zastosowania. 
+                        Wprowadzenie do przetwarzania języka naturalnego (NLP). Metody detekcji anomalii w danych
+
 #   pca
 #metody redukcji wymiarów danych i metody
 #To informacja, ile „różnorodności” danych (wariancji) tłumaczy każda składowa główna.
@@ -52,16 +59,225 @@ explained_variance_ratio_
 #Konwersja tekstu do reprezentacji numerycznej (BoW, TF-IDF,embeddings).
 #Trenowanie modelu i ocena jakości modelu
 
-#   wyklad 5        Analiza czasowych szeregów danych
+        wyklad 5        Analiza czasowych szeregów danych
 
-#   wyklad 6 
+#potem
 
-#   wyklad 7 
+        wyklad 6        Projektowanie eksperymentów i testowanie hipotez
 
-#   wyklad 8 
+#   hipoteza zerowa i alternatywna (H0, H1)
+#H0 (hipoteza zerowa) „Nie ma efektu / różnicy”
+#H1 (hipoteza alternatywna) „Jest efekt / różnica”
+#p-value małe p (np. < 0.05) → odrzucasz H0, duże p → nie masz podstaw do odrzucenia H0
+#Błąd I rodzaju = odrzucasz prawdziwą hipotezę zerową (H0) „Widzisz efekt, którego w rzeczywistości nie ma”
+#Błąd II rodzaju (β) =  odrzucasz alternatywna hipotezę  (H1) nie widzisz efektu, który istnieje
 
-#   wyklad 9 
+#   test t student
+#metoda statystyczna używana do sprawdzania, czy średnie dwóch grup różnią się od siebie 
+#w sposób istotny statystycznie. Najczęściej stosuje się go wtedy, gdy mamy małą próbę danych 
+#i chcemy ocenić, czy zaobserwowana różnica jest „prawdziwa”, czy mogła powstać przypadkiem.
+# np 10 osób pisze test: przed kursem, po kursie. Średnie wyniki: przed = 55 pkt po = 72 pkt
+#Czy kurs naprawdę poprawił wyniki? Bo porównujemy te same osoby przed i po.
+#„Jak bardzo dane pasują do H0”
 
-#   wyklad 10 
+#   ANOVA — więcej niż dwie średnie
+#Test t działa dobrze dla 2 grup. Gdy grup jest więcej, używa się ANOVA.
+#Porównujemy 3 metody nauki: tradycyjna, online, hybrydowa. Średnie wyników: 60, 70, 82
+#Czy któraś metoda daje inne wyniki?
+#w regresji testuje czy wszystkie grupy mają tę samą średnią
 
-#   wyklad 11
+#   Test χ² (chi-kwadrat) — proporcje / tabele
+#Używa się go dla: danych kategorycznych,  odpowiedzi typu TAK/NIE, sprawdzania proporcji.
+#np  badamy zależność między:  płcią, preferencją kawy. Obie zmienne są kategoryczne.
+
+#   Testy nieparametryczne
+#Używa się ich gdy: dane nie mają rozkładu normalnego, próba jest bardzo mała, są dziwne wartości odstające.
+#np Masz tylko 5 osób i bardzo nierówne wyniki: 2, 3, 100, 4, 5, Średnia jest zaburzona przez „100”.
+
+#   test permutacyjny
+#„Czy obserwowana różnica mogła powstać przypadkiem?” ale bez zakładania rozkładu normalnego.
+#dzialanie lączymy wszystkie dane: np 5, 6, 7, 10, 11, 12
+#Losowo mieszamy dane i dzielimy na nowe grupy. A = 5, 10, 12 B = 6, 7, 11 Liczymy różnicę średnich.
+#Powtarzamy tysiące razy. jak często losowe podziały dają różnicę tak dużą jak oryginalna.
+#glownym celem jest mieszanie grup Permutacje odpowiadają na pytanie: czy efekt jest istotny?
+
+#   bootstrap
+#podobne do permutacji tylko liczby moga byc powtarzane
+#Dzięki temu możemy oszacować: rozkład średniej, przedział ufności, stabilność wyniku.
+#Bootstrap odpowiada na pytanie: jak duża jest niepewność estymacji?
+
+#   podejscie bayesa
+#traktujesz niepewność jako coś, co możesz aktualizować wraz z nowymi danymi.
+#wynik prawdopodobieństwo, jak bardzo coś jest prawdziwe. 
+
+#   CTR = Click-Through Rate (współczynnik klikalności)
+#np Masz dwie wersje przycisku: Wersja A: „Kup teraz”, Wersja B: „Sprawdź ofertę”
+#Wyniki: A: 1000 wyświetleń, 50 kliknięć → CTR = 5%, B: 1000 wyświetleń, 80 kliknięć → CTR = 8%
+#Dlatego często analizuje się go razem z: konwersją (conversion rate), czasem na stronie, bounce rate.
+
+#   Granice O’Brien–Fleming
+#Jeśli co chwilę „podglądasz” wyniki (np. po 1000, 2000, 3000 użytkownikach), to rośnie ryzyko 
+#fałszywego odkrycia efektu (błąd I rodzaju).
+#Na początku eksperymentu: musisz mieć bardzo silny dowód, żeby zakończyć test
+#Na końcu: próg jest zbliżony do klasycznego (np. α = 0.05)
+
+#   Korekta Bonferroniego (Kontrola bledu)
+#FWER — kontrola czy wystąpi choć jeden błąd, FDR — kontrola jaki odsetek odkryć jest fałszywy.
+#bez korekty: łatwo „znaleźć efekt przypadkiem” Z korektą: jesteś bardziej surowy → mniej fałszywych odkryć
+
+#   Procedura Holm–Bonferroni
+#podobne Korekta Bonferroniego kontroluje błąd I rodzaju (fałszywe odkrycia), ale jest:
+#mniej „surowa” i bardziej efektywna statystycznie.
+#dzialanie Zamiast jednego progu dla wszystkich testów: każdy test ma inny próg istotności
+
+#   Procedura Benjamini–Hochberg (BH)
+#Benjamini–Hochberg to metoda korekty wielokrotnych testów, która kontroluje: FDR (False Discovery Rate)
+# jest to kompomis np Zamiast pytać: „czy ten jeden test jest istotny?”
+#BH pyta: „ile z moich istotnych wyników może być fałszywych?”
+
+#   ktore wybrac
+#Im bardziej kosztowny jest fałszywy alarm, tym silniejszej kontroli potrzebujemy.
+#Mało testów, duże ryzyko błędu Bonferroni / Holm
+#Eksperyment kliniczny Holm / Bonferroni
+#Eksploracja danych / genomika Benjamini–Hochberg
+#Setki / tysiące testów FDR zamiast FWER
+
+#   Test proporcji jako regresja logistyczna
+#Test proporcji sprawdza np.: czy udział „sukcesów” jest taki sam w dwóch grupach? czy 35% vs 20% to istotna różnica?
+#Interpretacja: p < 0.05	proporcje różne, β1 > 0	B ma większą szansę sukcesu, β1 < 0	A ma większą szansę
+
+        wyklad 7        Integracja danych i bazy danych
+
+#   ETL (Extract, Transform, Load)
+#to proces pobierania, przekształcania i ładowania danych do systemu docelowego.
+
+#   Hurtownia danych 
+#system przechowujący zintegrowane dane z wielu źródeł, zoptymalizowany do analizy i raportowania.
+
+#   Schemat gwiazdy (star schema)/tabela techniczna/ tabela techniczna ale ze wszystkimi idi w 1 kolumnie i nulle
+#Przykład: sprzedaż (fakt), klient, produkt, czas (wymiary)
+
+#   Business Intelligence (BI)
+#dashboardy, raporty, wizualizacje Cel: wspieranie decyzji biznesowych.
+
+        wyklad 8        Reprezentacja danych w przestrzeniach wektorowych
+
+#To sposób przekształcenia obiektów w liczby tak, aby model mógł na nich wykonywać obliczenia.
+#Wektory pozwalają traktować obiekty jako punkty w przestrzeni
+#One-hot encoding jest prosty, ale nie koduje podobieństwa
+
+#   Odległość euklidesowa
+#Co mierzy? różnicę położenia punktów uzywa do dane numeryczne w tej samej skali
+
+#   iloczyn skalarny 
+#(mnozenie 2 wektorow) problem z kierunkiem wzrostu np 1*40 = 40 , 4*10=40
+#Co mierzy? zgodność kierunku i długość uzywa do modele liniowe, sieci neuronowe
+
+#   Cosine similarity
+#ortogonalne Q^T*Q=1 (macierz jednostkowa)
+#Mierzy kąt między wektorami. Wartości: 1 – identyczne kierunki, 0 – ortogonalne, -1 – przeciwne.
+#Co mierzy? podobieństwo kierunku uzywa do analizie tekstu, embeddingach, wyszukiwaniu podobieństw.
+
+        wyklad 9        Embeddingi danych tekstowych
+
+#Embedding to reprezentacja obiektu jako wektora liczb rzeczywistych.
+
+#   średnia embeddingów słów.
+#To podejście jest proste, ale traci część informacji o kolejności słów.
+
+#   Word2Vec
+#Model uczy się, które słowa pojawiają się blisko siebie w tekście
+#Dla słowa centralnego wybieramy kilka słów po lewej i prawej stronie. To tzw. okno kontekstu.
+#Co robi Model zaczyna od losowych wektorów słów. Następnie poprawia je tak, aby dobrze przewidywać kontekst.
+#W trakcie uczenia podobne słowa przesuwają się bliżej siebie. Po treningu zachowujemy właśnie te nauczone wektory.
+#Model nie „rozumie” słów jak człowiek — odkrywa ich znaczenie przez statystyczne wzorce współwystępowania.
+#warianty CBOW, Skip-gram
+
+#   CBOW
+#przewiduje brakujące słowo na podstawie otoczenia. Kolejność słów w prostym CBOW jest mniej istotna niż ich obecność.
+
+#   Skip-gram
+#Z jednego słowa centralnego próbuje przewidzieć słowa z jego otoczenia.
+
+#   GloVe (Global Vectors for Word Representation.)
+#uczy na podstawie globalnych statystyk korpusu. Główna informacja wejściowa: jak często pary słów współwystępują.
+#Jeśli dwa słowa często pojawiają się w podobnych kontekstach, ich wektory powinny być podobne.
+#Model uczy wektory tak, aby ich iloczyn skalarny odtwarzał logarytm tej liczby
+#Model porównuje przewidywaną wartość z rzeczywistą statystyką współwystępowania. Duże błędy są karane.
+
+#   Embeddingi kontekstowe
+#modele tworzą embedding zależny od kontekstu. To samo słowo może mieć różne wektory w różnych zdaniach.
+
+#Embedding słowa reprezentuje pojedyncze słowo, prosty i szybki, dobry do relacji między słowami, słabszy przy wieloznaczności.
+#Embedding zdania reprezentuje całą wypowiedź, lepiej oddaje kontekst, dobry do wyszukiwania semantycznego, 
+#zwykle bardziej kosztowny obliczeniowo.
+
+        wyklad 10        Embeddingi kontekstowe, sentence embeddings, wyszukiwanie semantyczne i RAG
+
+#token + kontekst → wektor, inny wektor dla różnych użyć, np. ELMo, BERT, modele Transformer.
+
+#embeddingiem w BERT  (Bidirectional Encoder Representations from Transformers.)
+#   Transformer
+#opiera się na mechanizmie uwagi, który pozwala tokenom “patrzeć” na inne tokeny w sekwencji.
+#   Embedding wejściowy
+#wektor tokenu przed warstwami Transformera. Embedding kontekstowy: wyjście z wybranej warstwy dla konkretnego tokenu.
+#   Reprezentacja [CLS]
+#często używana jako reprezentacja całej sekwencji. Pooling: sposób zamiany wielu wektorów tokenów na jeden wektor tekstu.
+
+#wady jego surowe wyjścia nie zawsze dobrze nadają się do szybkiego porównywania zdań.
+
+#testy modelu
+#Recall@k: czy trafny dokument jest w pierwszych k wynikach?
+#Precision@k: ile z pierwszych k wyników jest trafnych?
+#MRR: jak wysoko pojawia się pierwszy trafny wynik?
+#nDCG: uwzględnia stopnie relewancji i pozycję.
+
+#   RAG: Retrieval-Augmented Generation
+#Retrieval: znajdź relewantne źródła. Augmentation: dołącz je do promptu/kontekstu. 
+#Generation: wygeneruj odpowiedź na podstawie źródeł.
+
+#   elementy RAG
+#Query rewriting: przepisanie pytania na lepsze zapytanie do retrievalu. 
+#Multi-query retrieval: kilka wariantów zapytania.
+#Reranking: ponowne uporządkowanie kandydatów przez cross-encoder lub LLM.
+#Metadata filtering: wyszukiwanie w obrębie działu, daty, języka, uprawnień.
+#Context compression: skracanie fragmentów bez utraty odpowiedzi. 
+#Citations: wiązanie zdań odpowiedzi ze źródłami.
+
+        wyklad 11        Miary podobieństwa i wyszukiwanie w przestrzeniach wektorowych Cosine similarity, 
+                         odległość euklidesowa, k-NN, ANN i vector databases
+
+#   Rekord w bazie wektorowej
+#ID,wektor: [0.12],metadane: [autor, data, język, kategoria, uprawnienia], payload: [fragment tekstu, URL, tytuł, opis]
+
+        wyklad 12        Pipeline analizy danych (end-to-end)
+
+#   Etapy pipelinu
+#Zbieranie danych
+#Czyszczenie danych
+#Eksploracyjna analiza danych (EDA)
+#Feature engineering
+#Budowa modelu
+#Ewaluacja i wdrożenie
+#Zapis artefaktów  Monitoring po wdrożeniu
+
+#Wersjonowanie kodu
+#Wersjonowanie danych
+#Logowanie parametrów
+#Testy pipeline’u
+
+#   data leakage
+#cecha	„czy konto zamknięte”,  "klient odejdzie"
+#Jeśli „konto zamknięte” dzieje się po rezygnacji, to:  model dostaje informację z przyszłości
+#Data preprocessing robiony na całym dataset tak dobrze bo StanardScaler nie uczy sie na calych danych i moze to zaburzyc
+X_train, X_test = train_test_split(...)
+scaler.fit(X_train)
+#Duplikaty w danych
+#Time leakage trening zawiera dane z 2024, test zawiera dane z 2023
+
+#   jak wykryc data leakage
+#Podejrzanie wysokie wyniki
+#Cechy dostępne po zdarzeniu
+#Silna korelacja cechy z targetem
+#Brak spadku jakości na walidacji
+#Różnica między offline a produkcją
